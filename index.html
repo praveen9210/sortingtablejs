@@ -1,0 +1,36 @@
+<html ng-app="tableSorting">
+
+<head>
+    <meta charset="utf-8">
+    <title>Table-Sorting</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/tablesort.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="app/app.js"></script>
+</head>
+
+<body ng-controller="SortingCtrl">
+    <!-- <center><h3>Table Sorting</h3></center> -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="col-md-2" ng-click="changeSorting('userId')">UserId<i class="glyphicon" ng-class="getIcon('userId')"></i></th>
+                <th class="col-md-2" ng-click="changeSorting('id')">Id<i class="glyphicon" ng-class="getIcon('id')"></i></th>
+                <th class="col-md-2" ng-click="changeSorting('title')">Title<i class="glyphicon" ng-class="getIcon('title')"></i></th>
+                <th class="col-md-4" ng-click="changeSorting('body')">Body<i class="glyphicon" ng-class="getIcon('body')"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Data in Datas | orderBy:sort.active:sort.descending">
+                <td>{{Data.userId}}</td>
+                <td>{{Data.id}}</td>
+                <td>{{Data.title}}</td>
+                <td>{{Data.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
