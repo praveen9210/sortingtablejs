@@ -35,8 +35,8 @@ TableSorting.controller('SortingCtrl', function($scope, $http) {
 
         if (sort.active == column) {
             return sort.descending ?
-                'glyphicon-chevron-up' :
-                'glyphicon-chevron-down';
+                'fa fa-sort-asc'
+                :'fa fa-sort-desc';
         }
     }
     $scope.init();

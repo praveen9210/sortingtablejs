@@ -56,12 +56,12 @@ describe('Unit Testing: Display data from Json', function() {
     it('should show down-arrow on userId column by default ', function() {
         scope.sort.active = 'userId';
         var result = scope.getIcon(scope.sort.active);
-        expect(result).to.equal('glyphicon-chevron-down');
+        expect(result).to.equal('fa fa-sort-desc');
     });
     it('should show down-arrow if user wants data in descending order', function() {
         scope.sort.active = 'userId';
         scope.sort.descending = true;
         var result = scope.getIcon(scope.sort.active);
-        expect(result).to.equal('glyphicon-chevron-up');
+        expect(result).to.equal('fa fa-sort-asc');
     });
 });
