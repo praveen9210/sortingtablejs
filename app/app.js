@@ -17,23 +17,23 @@ TableSorting.controller('SortingCtrl', function($scope, $http) {
         });
     };
 
-    $scope.changeSorting = function(column) {
+    $scope.changeSorting = function(jsondata) {
 
         var sort = $scope.sort;
 
-        if (sort.active == column) {
+        if (sort.active == jsondata) {
             sort.descending = !sort.descending;
         } else {
-            sort.active = column;
+            sort.active = jsondata;
             sort.descending = false;
         }
     };
 
-    $scope.getIcon = function(column) {
+    $scope.getIcon = function(jsondata) {
 
         var sort = $scope.sort;
 
-        if (sort.active == column) {
+        if (sort.active == jsondata) {
             return sort.descending ?
                 'fa fa-sort-asc'
                 :'fa fa-sort-desc';

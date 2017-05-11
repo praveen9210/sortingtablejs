@@ -18,7 +18,7 @@ describe('Unit Testing: Display data from Json', function() {
         });
     }));
 
-    it('Should load the data on initialisation of the controller', function() {
+    it('Should load data on intialization', function() {
         $controllerConstructor('SortingCtrl', {
             $scope: scope,
             $http: http
@@ -46,19 +46,19 @@ describe('Unit Testing: Display data from Json', function() {
         wrapperGetStub.returns(responseObj);
     });
 
-    it('should display data on JSON call to the table', function() {
+    it('should load json data in table', function() {
         scope.active = '';
         scope.changeSorting('userId');
         expect(scope.sort.active).to.equal("userId");
         expect(scope.sort.descending).to.equal(true);
     });
 
-    it('should show down-arrow on userId column by default ', function() {
+    it('should display down arrow by default for userid ', function() {
         scope.sort.active = 'userId';
         var result = scope.getIcon(scope.sort.active);
         expect(result).to.equal('fa fa-sort-desc');
     });
-    it('should show down-arrow if user wants data in descending order', function() {
+    it('should display down arrow for descending order', function() {
         scope.sort.active = 'userId';
         scope.sort.descending = true;
         var result = scope.getIcon(scope.sort.active);
